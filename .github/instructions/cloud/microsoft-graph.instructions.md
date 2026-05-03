@@ -1,3 +1,4 @@
+<!-- version: 1.0.0 -->
 # Microsoft Graph Pack
 
 Use this guidance when working with Microsoft Graph APIs, SDKs, PowerShell, automation, app permissions, queries, or Graph-based integrations.
