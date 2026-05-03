@@ -1,3 +1,4 @@
+<!-- version: 1.0.0 -->
 # HTML Language Pack
 
 Use this guidance when working with HTML, templates, and static markup.

@@ -1,3 +1,4 @@
+<!-- version: 1.0.0 -->
 # JavaScript Language Pack
 
 Use this guidance when working with JavaScript code.
