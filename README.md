@@ -1,4 +1,4 @@
-<!-- version: 1.1.0 -->
+<!-- version: 1.1.1 -->
 # coding-agent-baselines
 
 A curated set of GitHub Copilot coding-agent instruction packs for consistent, secure, and maintainable AI-assisted development.
@@ -66,6 +66,7 @@ The goal of this repository is to act as a **reusable, version-controlled baseli
 | Concern | What the packs enforce |
 |---|---|
 | **Engineering discipline** | Plan-first, small reversible changes, tests are not optional |
+| **Cognition governance** | Minimum sufficient reasoning depth, semantic caching, PR contracts, and tiered tool escalation |
 | **Security** | No hard-coded secrets, input validation, least privilege everywhere |
 | **Dependency hygiene** | No new packages for <300 LOC tasks, no unresolved Critical/High CVEs |
 | **Identity safety** | Token audience/issuer validation, no confused deputy, no ROPC |
