@@ -86,9 +86,7 @@ durable truth cache in `.github/aadlc/memory.md` to preserve stable
 architectural facts and open questions, and use
 `.github/aadlc/current-pr-contract.md` to constrain implementation scope.
 
-Before any repository write, classify the action against
-`.github/aadlc/tool-policy.yml` and confirm it is allowed by the active
-PR contract.
+Before any repository write, classify the action against `.github/aadlc/tool-policy.yml` and confirm it is allowed by the active PR contract.
 
 For substantial, long, nested, or boundary-sensitive tasks, prefer
 prompt-as-code in `.github/aadlc/plans/` over large UI prompts. The
