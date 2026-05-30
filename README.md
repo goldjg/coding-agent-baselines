@@ -1,4 +1,4 @@
-<!-- version: 1.0.0 -->
+<!-- version: 1.1.0 -->
 # coding-agent-baselines
 
 A curated set of GitHub Copilot coding-agent instruction packs for consistent, secure, and maintainable AI-assisted development.
@@ -18,12 +18,24 @@ The packs are composed together in [`.github/copilot-instructions.md`](.github/c
 ```
 .github/
 ├── copilot-instructions.md          # Root composition file – loaded by Copilot automatically
+├── aadlc/
+│   ├── memory.md                        # Durable architectural truth cache
+│   ├── current-pr-contract.md           # Active PR contract template for scoped execution
+│   ├── invariants.yml                   # Machine-readable governance invariants
+│   ├── trust-boundaries.md              # Trust boundary definitions and crossing rules
+│   ├── tool-policy.yml                  # Tool permission tier policy (Tier 0/1/2)
+│   └── repo-map.example.json            # Example cognitive repo map for fast orientation
 └── instructions/
     ├── core/
     │   ├── baseline.instructions.md     # Engineering operating model (plan-first, small changes, no skipped tests)
     │   ├── security.instructions.md     # Security baseline (no hard-coded secrets, least privilege, SSRF prevention)
     │   ├── dependency.instructions.md   # Dependency discipline (no CVEs, prefer native, justify every addition)
-    │   └── identity.instructions.md    # Identity & trust baseline (validate tokens, avoid confused deputy)
+    │   ├── identity.instructions.md     # Identity & trust baseline (validate tokens, avoid confused deputy)
+    │   ├── aadlc.instructions.md        # AADLCv2 cognition governance phase model and composition
+    │   ├── cognition-governance.instructions.md # Reasoning-depth governance and ambiguity reduction
+    │   ├── tool-permission-tiers.instructions.md # Tiered tool governance and escalation protocol
+    │   ├── memory-cache.instructions.md # Durable memory cache governance
+    │   └── pr-contract.instructions.md  # PR contract lifecycle and scope enforcement
     ├── languages/
     │   ├── python.instructions.md       # Python conventions (stdlib-first, type hints, safe subprocess)
     │   ├── typescript.instructions.md   # TypeScript conventions (strict types, runtime validation, no `any`)
@@ -72,6 +84,23 @@ The goal of this repository is to act as a **reusable, version-controlled baseli
 
 ---
 
+## Cognition Governance Artefacts
+
+The `.github/aadlc/` directory contains durable governance artefacts used
+by the AADLCv2 packs. These files are templates and data, not instruction
+logic.
+
+| File | Purpose |
+|---|---|
+| `memory.md` | Durable architectural truth cache (purpose, invariants, trust boundaries, assumptions, open questions) |
+| `current-pr-contract.md` | PR contract template that constrains scope, constraints, validation, stop conditions, and escalation triggers |
+| `invariants.yml` | Machine-readable invariant set to preserve unless explicitly amended through governance change |
+| `trust-boundaries.md` | Trust boundary definitions and required validation when crossing boundaries |
+| `tool-policy.yml` | Tool-permission tier policy for read-only, scoped-write, and destructive/broad actions |
+| `repo-map.example.json` | Example cognitive map structure for durable repository orientation |
+
+---
+
 ## Pack Categories
 
 ### Core Packs
@@ -80,6 +109,11 @@ Foundational rules that apply to every task, regardless of language or platform:
 - **Security** – authentication/authorisation, injection prevention, secret hygiene
 - **Dependency Discipline** – CVE management, native-first preference, justification requirement
 - **Identity & Trust** – token validation, trust boundary discipline
+- **AADLCv2 Cognition Governance** – phase separation, delegated cognition governance, and bounded execution model
+- **Cognition Governance** – minimum sufficient reasoning depth, ambiguity reduction before costly execution
+- **Tool Permission Tiers** – Tier 0/1/2 action classification and escalation requirements
+- **Memory Cache** – durable architectural truth cache discipline and update rules
+- **PR Contract** – scoped implementation contract lifecycle, constraints, and escalation triggers
 
 ### Language Packs
 Language-specific conventions and guardrails:
