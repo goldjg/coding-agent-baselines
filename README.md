@@ -1,4 +1,4 @@
-<!-- version: 1.1.1 -->
+<!-- version: 1.2.0 -->
 # coding-agent-baselines
 
 A curated set of GitHub Copilot coding-agent instruction packs for consistent, secure, and maintainable AI-assisted development.
@@ -24,6 +24,9 @@ The packs are composed together in [`.github/copilot-instructions.md`](.github/c
 │   ├── invariants.yml                   # Machine-readable governance invariants
 │   ├── trust-boundaries.md              # Trust boundary definitions and crossing rules
 │   ├── tool-policy.yml                  # Tool permission tier policy (Tier 0/1/2)
+│   ├── plans/
+│   │   ├── README.md                    # Prompt-as-code guidance for substantial tasks
+│   │   └── plan-template.md             # Reusable AADLC planning contract template
 │   └── repo-map.example.json            # Example cognitive repo map for fast orientation
 └── instructions/
     ├── core/
@@ -98,7 +101,17 @@ logic.
 | `invariants.yml` | Machine-readable invariant set to preserve unless explicitly amended through governance change |
 | `trust-boundaries.md` | Trust boundary definitions and required validation when crossing boundaries |
 | `tool-policy.yml` | Tool-permission tier policy for read-only, scoped-write, and destructive/broad actions |
+| `.github/aadlc/plans/README.md` | Prompt-as-code usage guidance for substantial or boundary-sensitive tasks |
+| `.github/aadlc/plans/plan-template.md` | Reusable AADLC planning contract template for version-controlled task contracts |
 | `repo-map.example.json` | Example cognitive map structure for durable repository orientation |
+
+---
+
+## Prompt-as-Code
+
+For substantial, long, nested, or boundary-sensitive tasks, prefer a committed plan file over a large UI prompt.
+Use `.github/aadlc/plans/prN-short-description.md` for durable planning artefacts. A temporary root-level `PLAN.md` may be used on a feature branch, but it should be removed or moved into `.github/aadlc/plans/` before merge.
+Prompt-as-code makes task contracts version-controlled, diffable, auditable, and line-addressable. It also reduces risk from UI prompt truncation, mobile prompt fragility, and repeated prompt ping-pong.
 
 ---
 
@@ -150,6 +163,8 @@ Fork or copy this repository into your own GitHub account or organisation. GitHu
 ### Copying packs into another repository
 
 Copy any individual pack file from `.github/instructions/` into the corresponding path in your target repository. Then reference the pack from your own `.github/copilot-instructions.md` or let Copilot discover it via the instructions directory.
+
+For AADLCv2 usage, also copy `.github/aadlc/` and populate the artefacts for the target repository, especially `memory.md`, `current-pr-contract.md`, `invariants.yml`, `trust-boundaries.md`, `tool-policy.yml`, `repo-map.json`, and any relevant plan files under `.github/aadlc/plans/`.
 
 ### Versioning
 
