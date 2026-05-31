@@ -1,4 +1,4 @@
-<!-- version: 1.1.0 -->
+<!-- version: 1.2.0 -->
 # Durable Architectural Truth Cache
 
 This cache stores durable project truths that should persist beyond a
@@ -43,6 +43,14 @@ templates, not instruction-pack logic.
 - Repeated corrective prompting is a failure signal; reset the session
   or switch model instead of continuing prompt ping-pong.
 
+## Field findings
+- PR3 review gap: green tests alone do not prove contract compliance;
+  validate that tests assert approved acceptance criteria rather than
+  implementation drift.
+- Non-trivial output-schema-heavy, validation-heavy, trust-boundary, or
+  failure-mode-sensitive work should define 3-5 contract assertions
+  before implementation and check them during validation.
+
 ## Canonical validation commands
 <!-- Populate with validated commands that prove expected behavior in this repository. -->
 
@@ -54,4 +62,4 @@ the source of truth across model fallback.
 <!-- Populate with unresolved questions that should persist into future work. -->
 
 ## Last updated
-2026-05-30 by Codex
+2026-05-31 by Codex

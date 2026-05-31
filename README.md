@@ -1,4 +1,4 @@
-<!-- version: 1.2.0 -->
+<!-- version: 1.3.0 -->
 # coding-agent-baselines
 
 A curated set of GitHub Copilot coding-agent instruction packs for consistent, secure, and maintainable AI-assisted development.
@@ -69,6 +69,7 @@ The goal of this repository is to act as a **reusable, version-controlled baseli
 | Concern | What the packs enforce |
 |---|---|
 | **Engineering discipline** | Plan-first, small reversible changes, tests are not optional |
+| **Contract-to-test alignment** | Non-trivial work identifies 3-5 contract assertions and maps tests directly to approved acceptance criteria |
 | **Cognition governance** | Minimum sufficient reasoning depth, semantic caching, PR contracts, and tiered tool escalation |
 | **Security** | No hard-coded secrets, input validation, least privilege everywhere |
 | **Dependency hygiene** | No new packages for <300 LOC tasks, no unresolved Critical/High CVEs |
@@ -123,7 +124,7 @@ Foundational rules that apply to every task, regardless of language or platform:
 - **Security** – authentication/authorisation, injection prevention, secret hygiene
 - **Dependency Discipline** – CVE management, native-first preference, justification requirement
 - **Identity & Trust** – token validation, trust boundary discipline
-- **AADLCv2 Cognition Governance** – phase separation, delegated cognition governance, and bounded execution model
+- **AADLCv2 Cognition Governance** – phase separation, delegated cognition governance, bounded execution model, and contract assertion checks
 - **Cognition Governance** – minimum sufficient reasoning depth, ambiguity reduction before costly execution
 - **Tool Permission Tiers** – Tier 0/1/2 action classification and escalation requirements
 - **Memory Cache** – durable architectural truth cache discipline and update rules
